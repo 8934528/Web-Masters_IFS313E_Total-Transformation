@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Web_Masters_IFS313E_Total_Transformation.Admin" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="CSS/StyleSheet1.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <div class="row bg-secondary bg-opacity-75 mt-2 rounded-5 my-2 p-2">
+                <div class="col-8">
+                    <div class="container rounded-3">
+                        <h4>Admin Dashboard
+                        </h4>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="mt2 mb-3">
+                        <h4>
+                            <asp:Label ID="lblAdmin" runat="server" Text=""></asp:Label>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

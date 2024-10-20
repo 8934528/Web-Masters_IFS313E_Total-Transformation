@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ClientDashboard.master.cs" Inherits="Web_Masters_IFS313E_Total_Transformation.ClientDashboard" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>LogedIn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="CSS/StyleSheet1.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="container bg-secondary bg-opacity-75 rounded-5 mt-2">
+                    <div class="row">
+                        <div class="col-10 text-start">
+                            <img class="rounded-start-5" src="IMAGES/TotalTransformationLogo.jpeg" width="190" />
+                        </div>
+                        <div class="col-2">
+                            <div class="container-fluid my-2">
+                                <nav class="navbar navbar-expand-lg navbar-light" id="mainNav" data-toggle="affix">
+                                    <div class="container">
+                                        <ul class="navbar-nav text-uppercase">
+                                            <li class="nav-item"></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="mt-5">
+                <footer class="fixed-footer">
+                    <div class="container-fluid text-center bg-primary-subtle">
+                        <div class="row mt-3">
+                            <div class="col-lg-12">
+                                <p class="copyright">Copyright &copy; 2024 Total Transformation - Designed by: Web Masters</p>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

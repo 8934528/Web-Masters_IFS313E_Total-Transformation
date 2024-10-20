@@ -1,0 +1,562 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E8EB2CB-C336-4355-9243-3DD2F520A28E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Web_Masters_IFS313E_Total_Transformation</RootNamespace>
+    <AssemblyName>Web-Masters_IFS313E_Total-Transformation</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44375</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\lib\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1440.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1440.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1440.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1440.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1440.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1440.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="CSS\StyleSheet1.css" />
+    <Content Include="Global.asax" />
+    <Content Include="IMAGES\1.jpg" />
+    <Content Include="IMAGES\40 Stirring Curly Hairstyles for Black Men.jpg" />
+    <Content Include="IMAGES\41 Hottest Cornrows and Scalp Braids to Show Your Braider.jpg" />
+    <Content Include="IMAGES\b455e8042ec2df02ddf42340ce49b5b1.jpg" />
+    <Content Include="IMAGES\Barbering\bursh.jpg" />
+    <Content Include="IMAGES\Barbering\cut1.jpg" />
+    <Content Include="IMAGES\Barbering\cut2.jpg" />
+    <Content Include="IMAGES\Barbering\cut3.jpg" />
+    <Content Include="IMAGES\Barbering\cut4.jpg" />
+    <Content Include="IMAGES\Barbering\cut5.jpg" />
+    <Content Include="IMAGES\Barbering\cut6.jpg" />
+    <Content Include="IMAGES\Barbering\cut7.jpg" />
+    <Content Include="IMAGES\Barbering\cut8.jpg" />
+    <Content Include="IMAGES\Barbering\cut9.jpg" />
+    <Content Include="IMAGES\Barbering\Pending.mp4" />
+    <Content Include="IMAGES\btterflyarchive.jpg" />
+    <Content Include="IMAGES\chat.png" />
+    <Content Include="IMAGES\doingcut.jpg" />
+    <Content Include="IMAGES\doingmakeup.jpg" />
+    <Content Include="IMAGES\download %281%29.jpg" />
+    <Content Include="IMAGES\download.jpg" />
+    <Content Include="IMAGES\facebook%28%29.png" />
+    <Content Include="IMAGES\gif.mp4" />
+    <Content Include="IMAGES\Hair and Styling\style1.jpg" />
+    <Content Include="IMAGES\Hair and Styling\style2.jpg" />
+    <Content Include="IMAGES\Hair and Styling\style3.jpg" />
+    <Content Include="IMAGES\Hair and Styling\style4.jpg" />
+    <Content Include="IMAGES\Hair and Styling\style5.jpg" />
+    <Content Include="IMAGES\Hair and Styling\style6.jpg" />
+    <Content Include="IMAGES\Hair and Styling\style7.jpg" />
+    <Content Include="IMAGES\Hair and Styling\style8.jpg" />
+    <Content Include="IMAGES\Hair and Styling\style9.jpg" />
+    <Content Include="IMAGES\Hair styles\afro.jpg" />
+    <Content Include="IMAGES\Hair styles\Braids.jpeg" />
+    <Content Include="IMAGES\Hair styles\chiskop.jpg" />
+    <Content Include="IMAGES\Hair styles\Cut 5.jpg" />
+    <Content Include="IMAGES\Hair styles\hair cut.jpeg" />
+    <Content Include="IMAGES\Hair styles\images.jpeg" />
+    <Content Include="IMAGES\Hair styles\Make Up.jpg" />
+    <Content Include="IMAGES\Hair styles\Nails 1.jpg" />
+    <Content Include="IMAGES\Hair styles\pixie.jpg" />
+    <Content Include="IMAGES\Hair styles\snoopy man.jpg" />
+    <Content Include="IMAGES\Hair styles\Snoopy.jpg" />
+    <Content Include="IMAGES\Hair styles\Straight Back.jpeg" />
+    <Content Include="IMAGES\Hair styles\Straight back1.jpeg" />
+    <Content Include="IMAGES\icon\bookings.png" />
+    <Content Include="IMAGES\icon\Clients.png" />
+    <Content Include="IMAGES\icon\Messages.png" />
+    <Content Include="IMAGES\icon\Practitioners.png" />
+    <Content Include="IMAGES\icon\revenue.png" />
+    <Content Include="IMAGES\icon\Services.png" />
+    <Content Include="IMAGES\icon\user.png" />
+    <Content Include="IMAGES\images.jpeg" />
+    <Content Include="IMAGES\instagram.png" />
+    <Content Include="IMAGES\Javas%27s Haircut.jpg" />
+    <Content Include="IMAGES\Make Up.jpg" />
+    <Content Include="IMAGES\MakeUp\make1.jpg" />
+    <Content Include="IMAGES\MakeUp\make2.jpg" />
+    <Content Include="IMAGES\MakeUp\make3.jpg" />
+    <Content Include="IMAGES\MakeUp\make4.jpg" />
+    <Content Include="IMAGES\MakeUp\make5.jpg" />
+    <Content Include="IMAGES\MakeUp\make6.jpg" />
+    <Content Include="IMAGES\MakeUp\make7.jpg" />
+    <Content Include="IMAGES\MakeUp\make8.jpg" />
+    <Content Include="IMAGES\MakeUp\make9.jpg" />
+    <Content Include="IMAGES\MEMBERS\WhatsApp Image 2024-03-26 at 11.32.24 %281%29.jpeg" />
+    <Content Include="IMAGES\MEMBERS\WhatsApp Image 2024-03-26 at 11.32.24.jpeg" />
+    <Content Include="IMAGES\MEMBERS\WhatsApp Image 2024-03-26 at 12.38.01.jpeg" />
+    <Content Include="IMAGES\MEMBERS\WhatsApp Image 2024-03-26 at 12.39.30.jpeg" />
+    <Content Include="IMAGES\MEMBERS\WhatsApp Image 2024-03-26 at 12.42.00.jpeg" />
+    <Content Include="IMAGES\MEMBERS\WhatsApp Image 2024-03-26 at 12.43.24.jpeg" />
+    <Content Include="IMAGES\Nail Art Designs Ideas Tips &amp; Inspiration.jpg" />
+    <Content Include="IMAGES\Nails\Nail1.jpg" />
+    <Content Include="IMAGES\Nails\Nail10.jpg" />
+    <Content Include="IMAGES\Nails\Nail2.jpg" />
+    <Content Include="IMAGES\Nails\Nail3.jpg" />
+    <Content Include="IMAGES\Nails\Nail4.jpg" />
+    <Content Include="IMAGES\Nails\Nail5.jpg" />
+    <Content Include="IMAGES\Nails\Nail7.jpg" />
+    <Content Include="IMAGES\Nails\Nail8.jpg" />
+    <Content Include="IMAGES\Nails\Nail9.jpg" />
+    <Content Include="IMAGES\sand-clock.gif" />
+    <Content Include="IMAGES\Services\Nails.jpg" />
+    <Content Include="IMAGES\Services\barbering.jpg" />
+    <Content Include="IMAGES\Services\New logo.jpg" />
+    <Content Include="IMAGES\Services\styling.jpg" />
+    <Content Include="IMAGES\Services\Makeup.jpg" />
+    <Content Include="IMAGES\Straight Back.jpeg" />
+    <Content Include="IMAGES\telegram.png" />
+    <Content Include="IMAGES\TotalTransformationLogo.jpeg" />
+    <Content Include="IMAGES\twitter.png" />
+    <Content Include="IMAGES\User Icon.png" />
+    <Content Include="IMAGES\whatsapp.png" />
+    <Content Include="IMAGES\Zandie%27s Nails.jpg" />
+    <Content Include="IMAGES\Zintle%27s Hairstyle.jpg" />
+    <Content Include="IMAGES\Zuzu%27s Nails.jpg" />
+    <Content Include="Nails.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Index.aspx" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="AboutUs.aspx" />
+    <Content Include="SignIn.aspx" />
+    <Content Include="SignUp.aspx" />
+    <Content Include="ClientDashboard.aspx" />
+    <Content Include="Barbering.aspx" />
+    <Content Include="MakeUp.aspx" />
+    <Content Include="HairAndStyling.aspx" />
+    <Content Include="AdminPage.aspx" />
+    <Content Include="PractitionerDashboard.aspx" />
+    <Content Include="Bookings.aspx" />
+    <Content Include="TotalClients.aspx" />
+    <Content Include="TotalPractitioner.aspx" />
+    <Content Include="TotalServices.aspx" />
+    <Content Include="payment.aspx" />
+    <Content Include="SuccessfulBooking.aspx" />
+    <Content Include="ViewBookingsClient.aspx" />
+    <Content Include="AcceptedBookingsPractitioner.aspx" />
+    <Content Include="AcceptedBookingsClient.aspx" />
+    <Content Include="AfterBooking.aspx" />
+    <Content Include="TotalBookings.aspx" />
+    <Content Include="Profile.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ClientDashboard.Master.cs">
+      <DependentUpon>ClientDashboard.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientDashboard.Master.designer.cs">
+      <DependentUpon>ClientDashboard.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Nails.aspx.cs">
+      <DependentUpon>Nails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nails.aspx.designer.cs">
+      <DependentUpon>Nails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignIn.aspx.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignIn.aspx.designer.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClientDashboard.aspx.cs">
+      <DependentUpon>ClientDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClientDashboard.aspx.designer.cs">
+      <DependentUpon>ClientDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Barbering.aspx.cs">
+      <DependentUpon>Barbering.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Barbering.aspx.designer.cs">
+      <DependentUpon>Barbering.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MakeUp.aspx.cs">
+      <DependentUpon>MakeUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MakeUp.aspx.designer.cs">
+      <DependentUpon>MakeUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HairAndStyling.aspx.cs">
+      <DependentUpon>HairAndStyling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HairAndStyling.aspx.designer.cs">
+      <DependentUpon>HairAndStyling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPage.aspx.cs">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage.aspx.designer.cs">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PractitionerDashboard.aspx.cs">
+      <DependentUpon>PractitionerDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PractitionerDashboard.aspx.designer.cs">
+      <DependentUpon>PractitionerDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bookings.aspx.cs">
+      <DependentUpon>Bookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bookings.aspx.designer.cs">
+      <DependentUpon>Bookings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TotalClients.aspx.cs">
+      <DependentUpon>TotalClients.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TotalClients.aspx.designer.cs">
+      <DependentUpon>TotalClients.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TotalPractitioner.aspx.cs">
+      <DependentUpon>TotalPractitioner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TotalPractitioner.aspx.designer.cs">
+      <DependentUpon>TotalPractitioner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TotalServices.aspx.cs">
+      <DependentUpon>TotalServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TotalServices.aspx.designer.cs">
+      <DependentUpon>TotalServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="payment.aspx.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="payment.aspx.designer.cs">
+      <DependentUpon>payment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SuccessfulBooking.aspx.cs">
+      <DependentUpon>SuccessfulBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SuccessfulBooking.aspx.designer.cs">
+      <DependentUpon>SuccessfulBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TotalTransformationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotalTransformationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ViewBookingsClient.aspx.cs">
+      <DependentUpon>ViewBookingsClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewBookingsClient.aspx.designer.cs">
+      <DependentUpon>ViewBookingsClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AcceptedBookingsPractitioner.aspx.cs">
+      <DependentUpon>AcceptedBookingsPractitioner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AcceptedBookingsPractitioner.aspx.designer.cs">
+      <DependentUpon>AcceptedBookingsPractitioner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AcceptedBookingsClient.aspx.cs">
+      <DependentUpon>AcceptedBookingsClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AcceptedBookingsClient.aspx.designer.cs">
+      <DependentUpon>AcceptedBookingsClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AfterBooking.aspx.cs">
+      <DependentUpon>AfterBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AfterBooking.aspx.designer.cs">
+      <DependentUpon>AfterBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TotalBookings.aspx.cs">
+      <DependentUpon>TotalBookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TotalBookings.aspx.designer.cs">
+      <DependentUpon>TotalBookings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Main.Master" />
+    <Content Include="ClientDashboard.Master" />
+    <Content Include="Admin.Master" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="TotalTransformationDataSet.xsc">
+      <DependentUpon>TotalTransformationDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP1.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP10.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP11.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP12.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP13.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP14.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP15.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP2.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP3.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP4.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP5.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP6.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP7.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP8.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - FTP9.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy10.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy11.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy12.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy13.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy14.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy15.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy2.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy3.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy4.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy5.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy6.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy7.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy8.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs2024web-001-site1 - Web Deploy9.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs313total-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs313total-001-site1 - FTP1.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs313total-001-site1 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\ifs313total-001-site1 - Web Deploy1.pubxml" />
+    <None Include="Properties\PublishProfiles\mastersifs2024-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\mastersifs2024-001-site1 - Web Deploy.pubxml" />
+    <None Include="TotalTransformationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TotalTransformationDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="TotalTransformationDataSet.xss">
+      <DependentUpon>TotalTransformationDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ChartTempFiles\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51907</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44375/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.4.1.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+    <Error Condition="!Exists('packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
